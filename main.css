@@ -1,0 +1,192 @@
+html {
+  overflow: hidden;
+}
+
+body {
+  /* background-color: #333652; */
+  /* font-family: "Montserrat"; */
+
+  background: radial-gradient(circle farthest-corner at 100% 0%, #140a40 15%, rgb(44, 0, 80) 40%, rgb(20, 27, 34) 90%);
+  /* background-attachment:fixed; */
+  /* animation: gradient 15s ease infinite; */
+
+  font-family: "Fredoka One";
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3em;
+}
+
+h1 {
+  color: #13c9e9;
+  font-size: 3em;
+  margin: 0.3em;
+}
+
+h4 {
+  color: #6170c4;
+  font-size: 2em;
+  margin: 0.2em;
+}
+
+p {
+  color: #e9eaec;
+  font-size: 1.2em;
+  font-family: "Montserrat";
+  text-align: justify;
+}
+
+.overflo{
+  height:500px; 
+  width: 100%; 
+  border:solid 1px #4f8ed3; 
+  overflow: auto; 
+  padding: 16px; 
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.scroll4::-webkit-scrollbar {
+  width: 6px;
+}
+ 
+.scroll4::-webkit-scrollbar-thumb {
+  background: #4f8ed3  ;
+  border-radius: 20px;
+}
+
+.scroll4::-webkit-scrollbar-track {
+  background: #333652;
+  border-radius: 20px;
+}
+
+#url{
+  color: rgb(0, 255, 255);
+  font-size: 1em;
+}
+
+.cox{
+  color: purple;
+}
+
+a:link {
+  color: purple;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(0, 89, 255);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.button {
+  
+  /* padding-top: 30px; */
+  /* padding-bottom: 30px; */
+  text-align: center;
+  color: #000;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-left: 5px;
+  margin-right: 5px;
+  /* margin-bottom: 30px; */
+  cursor: pointer;
+  display: inline-block;
+}
+
+.button-1 {
+  width: 150px;
+  background-color: transparent;
+  border: 3px solid #00d7c3;
+  border-radius: 20px;
+  -webkit-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out;
+  color: #00ff00;
+}
+.button-1:hover {
+  box-shadow: 0 0 10px 0 #00d7c3 inset, 0 0 20px 2px #00d7c3;
+  border: 3px solid #00ff00;
+}
+
+.button-2 {
+  width: 60px;
+  background-color: transparent;
+  border: 3px solid #00d7c3;
+  border-radius: 20px;
+  -webkit-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out;
+  color: #00d7c3;
+}
+
+
+/* UNSAFE */
+/* .button-2 {
+  width: 60px;
+  background-color: transparent;
+  border: 3px solid #d76800;
+  border-radius: 20px;
+  -webkit-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out;
+  color: #d70000;
+} */
+
+/* .button-3 {
+  width: 60px;
+  background-color: transparent;
+  border: 3px solid #00d7c3;
+  border-radius: 50px;
+} */
+
+.container {
+  text-align: center;
+  width: auto;
+}
+
+#buttons{
+  margin: auto;
+  width: 50%;
+  text-align: center;
+}
+.download_button{
+  margin: 2px;
+  background-color: #fff;
+  padding: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  text-align: center;
+  border: 2px solid #fff;
+  border-radius: 10px;
+}
+.download_button img{
+  height: 16px;
+  width: 16px;
+  margin-right: 2px;
+}
+
+
+
+svg {
+  width: 30%;
+  height: 30%;
+  fill: orange;
+  stroke: black;
+  stroke-width: 4px;
+  stroke-dasharray: 2266;
+  stroke-dashoffset: 0;
+  animation: 4s desenha infinite alternate;
+}
+
+@keyframes desenha {
+  from {
+    /* Fim */
+    stroke-dashoffset: 2266;
+    /* 2266.062744140625 */
+  }
+  to {
+    /* Ponto inicial */
+    stroke-dashoffset: 0;
+  }
+}

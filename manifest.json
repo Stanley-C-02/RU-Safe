@@ -1,0 +1,28 @@
+{
+  "name": "RU_Safe?",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "Your personal Browser Guardian 🛡️🔗",
+  "author":"@Neilblaze",
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_icon": "rusafe.png"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "tabs"],
+  "background": {
+      "service_worker": "popup.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://meet.google.com/*"],
+      "js": ["index.js"]
+    }
+  ],
+  "icons": {
+    "128": "rusafe.png"
+  },
+  "content_security_policy": "script-src 'self' 'sha256-PAyb3PnRPKdQ/zZ3eNZVMh2iKFwxlu1BZA4FGs7GPpw='; object-src 'self'"
+}
