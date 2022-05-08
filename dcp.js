@@ -1,42 +1,72 @@
-// call deploy to check
 async function deploy() {
-  // document.getElementById("output").innerHTML = "";
-  /* INPUT SET */
-  const els = document.querySelectorAll("*[href]");
+  const els = document.querySelectorAll("<REPLACE_WITH_Endpoint>");
+  const promises = [];
+  for (const el of els) {
+    promises.push(fetch(el.href, { method: "GET" }));
+  }
+
+  const responses = await Promise.all(promises);
+  for (const response of responses) {
+    console.log(response);
+  }
+}
+
+  function progress() {
+    document.getElementById("progress").innerHTML = "Loading...";
+  }
+
+  function work() {
+    var link = document.getElementById("url").innerHTML;
+    workFunction(link);
+  }
 
   let inputSet = [];
-  for(let i = 0; i < els.length; i++) {  // array of URLs to check
+  for(let i = 0; i < els.length; i++) {  
+    inputSet.push(els[i].href);
+  }
     if(!inputSet.includes(els[i].href)) {
       inputSet.push(els[i].href);
     }
   }
 
-  /* WORK FUNCTION */
   function workFunction(link) {
     progress();
-    return true;  // TODO: MAKE REQUEST AND RETURN RESULT HERE!!!
+    var requestOptions = {
+      method: "GET",
+      redirect: "follow",
+      mode: "no-cors",
+    };
+    fetch(link, requestOptions)
+      .then((response) => response.json())
+      .then(
+        (result) => {
+          if(result.summary) {
+            document.getElementById("summary").innerHTML = result.summary;
+          } else {
+            document.getElementById("summary").innerHTML = "No summary found";
+          }
+        }
+      )
+    return true; 
   }
 
-  /* COMPUTE.FOR */ // init for job to be done
   let job = dcp.compute.for(inputSet, workFunction);
   job.public.name = 'RU-Safe Checking';
 
-  /* COMPUTE GROUP */ // only gives work to systems on the network below, for example at
   job.computeGroups = [
     {joinKey: 'hackathon', joinSecret: 'dcp2022'}
   ];
 ;
-  /* EVENTS */ // for debugging / logging
   job.on('readystatechange', rs => console.log('! readystate', rs));
+  
   job.on('result', (ev) => {
     console.log(`! received result: ${ev.result}`);
     document.getElementById("output").appendChild(document.createTextNode(ev.result+'-'));
   });
 
-  /* JOB.EXEC */ // sends the job out, waiting for results (results are in the same order as input; ['a', 'b', 'c'] >> upperCase gives ['A', 'B', 'C'])
   let resultSet = await job.exec();
   console.log(Array.from(resultSet).join(''));
-  console.log('! Job complete');
+  console.log('working!');
 }
 
 deploy();

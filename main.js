@@ -10,7 +10,7 @@ chrome.tabs.getSelected(null, (tab) => {
   // displays it to the user
 
   // API call
-  fetch("https://ruhacks-summarizer.herokuapp.com/query?article=" + tab.url)
+  fetch("https://ruhacks-summarizer.herokuapp.com/query?article=" + tab.url) // Summarizer API Endpoint
     .then((response) => response.json())
     .then(
       (result) =>
