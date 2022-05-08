@@ -38,11 +38,11 @@ p {
 }
 
 .overflo{
-  height:500px; 
-  width: 100%; 
-  border:solid 1px #4f8ed3; 
-  overflow: auto; 
-  padding: 16px; 
+  height:500px;
+  width: 100%;
+  border:solid 1px #4f8ed3;
+  overflow: auto;
+  padding: 16px;
   box-sizing: border-box;
   border-radius: 10px;
 }
@@ -50,7 +50,7 @@ p {
 .scroll4::-webkit-scrollbar {
   width: 6px;
 }
- 
+
 .scroll4::-webkit-scrollbar-thumb {
   background: #4f8ed3  ;
   border-radius: 20px;
@@ -83,7 +83,7 @@ a:hover {
 }
 
 .button {
-  
+
   /* padding-top: 30px; */
   /* padding-bottom: 30px; */
   text-align: center;
