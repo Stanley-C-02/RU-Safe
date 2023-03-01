@@ -6,7 +6,7 @@ RU Hacks 2022 submission
 2. Open [chrome://extensions/](chrome://extensions/) in Google Chrome
 3. Drag & drop the 'RU-Safe' folder into the window from step 2, or click 'Load unpacked' and select the 'RU-Safe' folder
 
-> Or please refer to *01:43* of the video
+> Or please refer to *01:43* of the video https://www.youtube.com/watch?v=L0a9E_Khi-I&embeds_euri=https%3A%2F%2Fdevpost.com%2F&feature=emb_imp_woyt&ab_channel=TasfiqJasimuddin&themeRefresh=1
 
 
 Few spam links kept for reference :- 
